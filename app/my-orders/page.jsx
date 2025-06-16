@@ -28,7 +28,7 @@ const MyOrders = () => {
             <Navbar />
             <div className="flex flex-col justify-between px-6 md:px-16 lg:px-32 py-6 min-h-screen">
                 <div className="space-y-5">
-                    <h2 className="text-lg font-medium mt-6">My Orders</h2>
+                    <h2 className="text-lg font-medium mt-6">Mes Commandes</h2>
                     {loading ? <Loading /> : (<div className="max-w-5xl border-t border-gray-300 text-sm">
                         {orders.map((order, index) => (
                             <div key={index} className="flex flex-col md:flex-row gap-5 justify-between p-5 border-b border-gray-300">
@@ -42,7 +42,7 @@ const MyOrders = () => {
                                         <span className="font-medium text-base">
                                             {order.items.map((item) => item.product.name + ` x ${item.quantity}`).join(", ")}
                                         </span>
-                                        <span>Items : {order.items.length}</span>
+                                        <span>Articles : {order.items.length}</span>
                                     </p>
                                 </div>
                                 <div>
@@ -59,9 +59,9 @@ const MyOrders = () => {
                                 <p className="font-medium my-auto">{currency}{order.amount}</p>
                                 <div>
                                     <p className="flex flex-col">
-                                        <span>Method : COD</span>
+                                        <span>Méthode : Paiement à la livraison</span>
                                         <span>Date : {new Date(order.date).toLocaleDateString()}</span>
-                                        <span>Payment : Pending</span>
+                                        <span>Paiement : En attente</span>
                                     </p>
                                 </div>
                             </div>

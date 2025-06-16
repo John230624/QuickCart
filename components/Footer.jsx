@@ -1,54 +1,121 @@
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import {
+  FaHome,
+  FaTags,
+  FaPhone,
+  FaEnvelope,
+  FaClock,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { AiFillFileText } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="flex flex-col md:flex-row items-start justify-center px-6 md:px-16 lg:px-32 gap-10 py-14 border-b border-gray-500/30 text-gray-500">
-        <div className="w-4/5">
-          <Image className="w-28 md:w-32" src={assets.logo} alt="logo" />
-          <p className="mt-6 text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </div>
+    <footer className=" bg-gray-800 text-blue-100">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 py-12 md:py-14 lg:px-8">
+        {/* Changed grid layout to distribute space more widely */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 justify-between">
+          {/* Logo and Description */}
+          <div className="md:col-span-1 lg:col-span-1">
+            <div className="flex flex-col items-start">
+              <Image
+                className="w-28 md:w-32 bg-zinc-300 rounded-md"
+                src={assets.logo}
+                alt="Company Logo"
+                width={128}
+                height={128}
+              />
+              <p className="mt-4 text-sm text-gray-300 leading-relaxed">
+                Lorem Ipsum est simplement un faux texte utilisé dans la composition
+                et la mise en page avant impression. Il est le texte standard de
+                l'industrie depuis les années 1500, quand un imprimeur anonyme
+                assembla une galerie de caractères pour réaliser un livre spécimen
+                de polices.
+              </p>
+            </div>
+          </div>
 
-        <div className="w-1/2 flex items-center justify-start md:justify-center">
-          <div>
-            <h2 className="font-medium text-gray-900 mb-5">Company</h2>
-            <ul className="text-sm space-y-2">
+          {/* Company Links */}
+          <div className="md:col-span-1">
+            <h2 className="text-lg font-semibold text-white mb-4">Entreprise</h2>
+            <ul className="space-y-3">
               <li>
-                <a className="hover:underline transition" href="#">Home</a>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <FaHome className="mr-3 text-blue-400" />
+                  Accueil
+                </a>
               </li>
               <li>
-                <a className="hover:underline transition" href="#">About us</a>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <FaTags className="mr-3 text-blue-400" />
+                  Offres
+                </a>
               </li>
               <li>
-                <a className="hover:underline transition" href="#">Contact us</a>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <FaPhone className="mr-3 text-blue-400" />
+                  Contactez-nous
+                </a>
               </li>
               <li>
-                <a className="hover:underline transition" href="#">Privacy policy</a>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <AiFillFileText className="mr-3 text-blue-400" />
+                  Politique de confidentialité
+                </a>
               </li>
             </ul>
           </div>
-        </div>
 
-        <div className="w-1/2 flex items-start justify-start md:justify-center">
-          <div>
-            <h2 className="font-medium text-gray-900 mb-5">Get in touch</h2>
-            <div className="text-sm space-y-2">
-              <p>+1-234-567-890</p>
-              <p>contact@greatstack.dev</p>
-            </div>
+          {/* Contact Information */}
+          <div className="md:col-span-1">
+            <h2 className="text-lg font-semibold text-white mb-4">Nous contacter</h2>
+            <address className="not-italic space-y-3 text-gray-300">
+              <div className="flex items-start">
+                <FaMapMarkerAlt className="mt-1 mr-3 text-blue-400 flex-shrink-0" />
+                <span>Abomey Calavi en face du Collège Bakhita , Benin</span>
+              </div>
+              <div className="flex items-center">
+                <FaPhone className="mr-3 text-blue-400" />
+                <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors">
+                  +(229)0197747178-0197918000-0148232681
+                </a>
+              </div>
+              <div className="flex items-center">
+                <FaEnvelope className="mr-3 text-blue-400" />
+                <a href="mailto:contact@example.com" className="hover:text-blue-400 transition-colors">
+                  plawimaddgroup1beninbranch@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center">
+                <FaClock className="mr-3 text-blue-400" />
+                <span>Lundi-Samedi: 09h-21h</span>
+              </div>
+            </address>
           </div>
         </div>
       </div>
-      <p className="py-4 text-center text-xs md:text-sm">
-        Copyright 2025 © GreatStack.dev All Right Reserved.
-      </p>
+
+      {/* Copyright Section */}
+      <div className="bg-gray-900 py-4">
+        <div className="container mx-auto px-4 text-center text-sm text-gray-400">
+          <p>Copyright &copy; {new Date().getFullYear()}  Tiburce & Jean . Tous droits réservés.</p>
+        </div>
+      </div>
     </footer>
   );
 };
